@@ -5,28 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HealthCare Medical Center</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
     scroll-behavior:smooth;
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
-    margin:0;
-    padding:0;
-    background:#17b5dd;
-    color;
+    font-family:'Roboto',sans-serif;
+    background: linear-gradient(135deg,#17b5dd,#0a8fb3);
+    color:#333;
 }
 
-/* Header with Hero Image */
+/* HEADER */
 header{
-    background: url('https://images.unsplash.com/photo-1588776814546-53f3d0c347c4?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-    color:rgb(24, 17, 17);
-    padding:120px 20px 60px 20px;
+    background:url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528') no-repeat center/cover;
+    color:white;
+    padding:120px 20px;
     text-align:center;
     position:relative;
 }
@@ -34,9 +33,9 @@ header{
 header::after{
     content:"";
     position:absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: whitesmoke;
-    z-index:0;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.6);
 }
 
 header h1, header p{
@@ -46,203 +45,199 @@ header h1, header p{
 
 header h1{
     font-size:3rem;
-    margin-bottom:15px;
+    text-shadow:0 0 10px #00aaff,0 0 25px #0073e6;
 }
 
 header p{
-    font-size:1.5rem;
+    font-size:1.3rem;
 }
 
-/* Navigation */
+/* NAV */
 nav{
-    background:#ffffff;
-    padding:15px 0;
+    background:#fff;
+    padding:15px;
     text-align:center;
-    box-shadow:0 4px 6px rgba(0,0,0,0.1);
-    position: sticky;
+    position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 nav a{
-    color:#0073e6;
+    margin:0 15px;
     text-decoration:none;
-    margin:15px;
+    color:#0073e6;
     font-weight:600;
-    transition: 0.3s;
+    transition:0.3s;
 }
 
 nav a:hover{
     color:#00aaff;
+    text-shadow:0 0 10px rgba(0,170,255,0.7);
 }
 
-/* Container */
+/* CONTAINER */
 .container{
     width:90%;
     max-width:1200px;
     margin:auto;
-    padding:50px 0;
 }
 
-/* Section Titles */
+/* SECTIONS WITH BACKGROUND IMAGE */
+section{
+    margin:60px 0;
+    padding:50px 20px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    background:url('https://images.unsplash.com/photo-1588776814546-53f3d0c347c4') no-repeat center/cover;
+}
+
+/* WHITE OVERLAY */
+section::after{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(255,255,255,0.92);
+    z-index:0;
+}
+
+section *{
+    position:relative;
+    z-index:1;
+}
+
+/* SECTION TITLE */
 .section-title{
     text-align:center;
-    color:#0073e6;
-    margin-bottom:50px;
     font-size:2.2rem;
-    position: relative;
+    color:#0073e6;
+    margin-bottom:30px;
+    text-shadow:0 0 10px rgba(0,170,255,0.6);
 }
 
-.section-title::after{
-    content:"";
-    display:block;
-    width:80px;
-    height:4px;
-    background:#00aaff;
-    margin:15px auto 0;
-    border-radius:2px;
+/* ANIMATION */
+section{
+    animation:fadeInUp 1s ease;
 }
 
-/* Services */
+@keyframes fadeInUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ABOUT */
+#about{
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition:0.4s;
+}
+
+#about:hover{
+    transform:scale(1.02);
+    box-shadow:0 25px 60px rgba(0,0,0,0.3);
+}
+
+/* SERVICES */
 .services{
     display:flex;
-    justify-content:space-around;
     flex-wrap:wrap;
+    justify-content:center;
 }
 
 .service-box{
-    background:white;
-    padding:30px 20px;
+    width:250px;
     margin:15px;
-    width:260px;
+    padding:25px;
     border-radius:15px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+    background:white;
     text-align:center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:0.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 .service-box:hover{
-    transform: translateY(-10px);
-    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+    transform:translateY(-12px) scale(1.05);
+    box-shadow:0 25px 50px rgba(0,0,0,0.3);
 }
 
-.service-box h3{
-    margin:15px 0 10px 0;
-}
-
-.service-box p{
-    font-size:0.95rem;
-    color:#555;
-}
-
-/* Doctors */
+/* DOCTORS */
 .doctors{
     display:flex;
-    justify-content:space-around;
     flex-wrap:wrap;
+    justify-content:center;
 }
 
 .doctor-card{
-    background:white;
-    padding:25px 20px;
+    width:220px;
     margin:15px;
-    width:230px;
+    padding:20px;
+    background:white;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 6px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.doctor-card:hover{
-    transform: translateY(-10px);
-    box-shadow:0 12px 25px rgba(0,0,0,0.2);
+    transition:0.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 .doctor-card img{
-    width:120px;
-    height:120px;
+    width:100px;
+    height:100px;
     border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
-.doctor-card h3{
-    margin:10px 0 5px 0;
-    color:#0073e6;
+.doctor-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* Appointment Form */
+/* FORM */
 form{
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    width:60%;
+    max-width:500px;
     margin:auto;
-    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 form input, form textarea{
     width:100%;
-    padding:15px;
-    margin:12px 0;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
     border:1px solid #ccc;
-    border-radius:10px;
-    transition: border 0.3s, box-shadow 0.3s;
-}
-
-form input:focus, form textarea:focus{
-    border-color:#0073e6;
-    box-shadow:0 0 10px rgba(0,115,230,0.3);
-    outline:none;
 }
 
 form button{
-    background: linear-gradient(90deg,#0064e6b2,#0099ffc0);
+    width:100%;
+    padding:15px;
+    background:#0073e6;
     color:white;
     border:none;
-    padding:18px;
-    width:100%;
-    font-size:18px;
-    border-radius:10px;
+    border-radius:8px;
     cursor:pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition:0.3s;
 }
 
 form button:hover{
-    background: linear-gradient(90deg,#005bb5,#0099e6);
-    transform: translateY(-3px);
+    background:#005bb5;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
     background:#0073e6;
     color:white;
     text-align:center;
-    padding:30px;
-    margin-top:50px;
+    padding:25px;
+    box-shadow:0 -5px 20px rgba(0,0,0,0.2);
 }
 
-footer p{
-    margin:8px 0;
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media(max-width:768px){
     .services, .doctors{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    form{
-        width:90%;
-    }
-
-    header h1{
-        font-size:2.2rem;
-    }
-
-    header p{
-        font-size:1.2rem;
+        flex-direction:column;
+        align-items:center;
     }
 }
 </style>
@@ -267,7 +262,7 @@ footer p{
 
 <section id="about">
 <h2 class="section-title">About Us</h2>
-<p style="text-align:center;max-width:800px;margin:auto;font-size:1.1rem;color:#555;">
+<p style="text-align:center;max-width:800px;margin:auto;">
 HealthCare Medical Center provides high-quality healthcare services with advanced technology 
 and experienced doctors. Our goal is to ensure the best treatment and care for every patient.
 </p>
@@ -277,46 +272,29 @@ and experienced doctors. Our goal is to ensure the best treatment and care for e
 <h2 class="section-title">Our Services</h2>
 
 <div class="services">
-
-<div class="service-box">
-<h3>🩺 Emergency Care</h3>
-<p>24/7 emergency medical support and ambulance services for urgent health needs.</p>
+<div class="service-box">🩺 Emergency Care</div>
+<div class="service-box">🔬 Laboratory</div>
+<div class="service-box">💊 Pharmacy</div>
+<div class="service-box">🩺 Health Checkups</div>
 </div>
 
-<div class="service-box">
-<h3>🔬 Laboratory</h3>
-<p>Advanced diagnostic and lab testing facilities for accurate results.</p>
-</div>
-
-<div class="service-box">
-<h3>💊 Pharmacy</h3>
-<p>In-house pharmacy providing all essential medicines and consultation.</p>
-</div>
-
-<div class="service-box">
-<h3>🩺 Health Checkups</h3>
-<p>Complete health checkup packages for adults, children, and senior citizens.</p>
-</div>
-
-</div>
 </section>
+
 <section id="doctors">
 <h2 class="section-title">Our Doctors</h2>
 
 <div class="doctors">
-
 <div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" alt="Dr. Rajesh Sharma">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d">
 <h3>Dr. Rajesh Sharma</h3>
 <p>Cardiologist</p>
 </div>
 
 <div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Dr. Neha Gupta">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2">
 <h3>Dr. Neha Gupta</h3>
 <p>Dermatologist</p>
 </div>
-
 <div class="doctor-card">
 <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Dr. Amit Verma">
 <h3>Dr. Amit Verma</h3>
@@ -330,26 +308,23 @@ and experienced doctors. Our goal is to ensure the best treatment and care for e
 </div>
 
 </div>
+</div>
+
 </section>
 
 </div>
 
 <section id="appointment">
-<h2 class="section-title">Book an Appointment</h2>
+<h2 class="section-title">Book Appointment</h2>
 
-<form>
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email Address" required>
-<input type="tel" placeholder="Phone Number" required>
-<input type="date" required>
-<textarea placeholder="Describe your problem"></textarea>
-<button type="submit">Submit Appointment</button>
+<form method="post" action="submit.php">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="date" name="date" required>
+    <textarea name="problem" placeholder="Your Problem" required></textarea>
+    <button type="submit">Submit</button>
 </form>
-
 </section>
-
-</div>
-
 <footer id="contact">
 <p>Contact: healthcare@email.com | +91 9876543210</p>
 <p>© 2026 HealthCare Medical Center</p>
