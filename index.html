@@ -1,333 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HealthCare Medical Center</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Medical Center</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-body{
-    font-family:'Roboto',sans-serif;
-    background: linear-gradient(135deg,#17b5dd,#0a8fb3);
-    color:#333;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #17b5dd, #0a8fb3);
+            color: #333;
+        }
 
-/* HEADER */
-header{
-    background:url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528') no-repeat center/cover;
-    color:white;
-    padding:120px 20px;
-    text-align:center;
-    position:relative;
-}
+        /* HEADER */
+        header {
+            background: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528') no-repeat center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-header::after{
-    content:"";
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.6);
-}
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
 
-header h1, header p{
-    position:relative;
-    z-index:1;
-}
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
 
-header h1{
-    font-size:3rem;
-    text-shadow:0 0 10px #00aaff,0 0 25px #0073e6;
-}
+        /* NEW ENHANCED GLOW EFFECT FOR HEADING */
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* Multi-layered glow */
+            text-shadow: 
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #00aaff,
+                0 0 82px #00aaff,
+                0 0 92px #00aaff,
+                0 0 102px #00aaff,
+                0 0 151px #00aaff;
+            animation: pulsate 2.5s infinite alternate;
+        }
 
-header p{
-    font-size:1.3rem;
-}
+        /* Glow Breathing Animation */
+        @keyframes pulsate {
+            100% {
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px #ff1493,
+                    0 0 80px #ff1493,
+                    0 0 90px #ff1493,
+                    0 0 100px #ff1493,
+                    0 0 150px #ff1493;
+            }
+            0% {
+                text-shadow:
+                    0 0 2px #fff,
+                    0 0 4px #fff,
+                    0 0 6px #fff,
+                    0 0 10px #00aaff,
+                    0 0 45px #00aaff,
+                    0 0 55px #00aaff,
+                    0 0 70px #00aaff,
+                    0 0 80px #00aaff;
+            }
+        }
 
-/* NAV */
-nav{
-    background:#fff;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            color: #e0e0e0;
+        }
 
-nav a{
-    margin:0 15px;
-    text-decoration:none;
-    color:#0073e6;
-    font-weight:600;
-    transition:0.3s;
-}
+        /* NAV WITH PINK GLOW & EFFECTS */
+        nav {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-nav a:hover{
-    color:#00aaff;
-    text-shadow:0 0 10px rgba(0,170,255,0.7);
-}
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0073e6;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
 
-/* CONTAINER */
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+        nav a:hover {
+            color: #ff1493;
+            text-shadow: 0 0 10px rgba(255, 20, 147, 0.7), 0 0 20px rgba(255, 20, 147, 0.4);
+            transform: translateY(-2px);
+        }
 
-/* SECTIONS WITH BACKGROUND IMAGE */
-section{
-    margin:60px 0;
-    padding:50px 20px;
-    border-radius:20px;
-    position:relative;
-    overflow:hidden;
-    background:url('https://images.unsplash.com/photo-1588776814546-53f3d0c347c4') no-repeat center/cover;
-}
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #ff1493;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px #ff1493;
+        }
 
-/* WHITE OVERLAY */
-section::after{
-    content:"";
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(255,255,255,0.92);
-    z-index:0;
-}
+        nav a:hover::after {
+            width: 80%;
+        }
 
-section *{
-    position:relative;
-    z-index:1;
-}
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-/* SECTION TITLE */
-.section-title{
-    text-align:center;
-    font-size:2.2rem;
-    color:#0073e6;
-    margin-bottom:30px;
-    text-shadow:0 0 10px rgba(0,170,255,0.6);
-}
+        /* SECTION STYLING */
+        section {
+            margin: 60px 0;
+            padding: 50px 20px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1588776814546-53f3d0c347c4') no-repeat center/cover;
+            animation: fadeInUp 1s ease;
+        }
 
-/* ANIMATION */
-section{
-    animation:fadeInUp 1s ease;
-}
+        section::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.94);
+            z-index: 0;
+        }
 
-@keyframes fadeInUp{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
-}
+        section * {
+            position: relative;
+            z-index: 1;
+        }
 
-/* ABOUT */
-#about{
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    transition:0.4s;
-}
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0073e6;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+        }
 
-#about:hover{
-    transform:scale(1.02);
-    box-shadow:0 25px 60px rgba(0,0,0,0.3);
-}
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* SERVICES */
-.services{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
+        .services, .doctors {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
 
-.service-box{
-    width:250px;
-    margin:15px;
-    padding:25px;
-    border-radius:15px;
-    background:white;
-    text-align:center;
-    transition:0.4s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
+        .service-box, .doctor-card {
+            width: 280px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
 
-.service-box:hover{
-    transform:translateY(-12px) scale(1.05);
-    box-shadow:0 25px 50px rgba(0,0,0,0.3);
-}
+        .service-box:hover, .doctor-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.5); 
+            border-color: #ff1493;
+        }
 
-/* DOCTORS */
-.doctors{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
+        .service-box img, .doctor-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-.doctor-card{
-    width:220px;
-    margin:15px;
-    padding:20px;
-    background:white;
-    border-radius:15px;
-    text-align:center;
-    transition:0.4s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
+        .service-box:hover img, .doctor-card:hover img {
+            transform: scale(1.1);
+        }
 
-.doctor-card img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    margin-bottom:10px;
-}
+        .service-content, .doctor-info {
+            padding: 20px;
+            text-align: center;
+        }
 
-.doctor-card:hover{
-    transform:scale(1.05);
-    box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
+        h3 {
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
 
-/* FORM */
-form{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
+        .service-box:hover h3, .doctor-card:hover h3 {
+            color: #ff1493;
+        }
 
-form input, form textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
-}
+        .specialty {
+            font-weight: bold;
+            color: #0073e6;
+            margin-bottom: 8px;
+        }
 
-form button{
-    width:100%;
-    padding:15px;
-    background:#0073e6;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .definition {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
 
-form button:hover{
-    background:#005bb5;
-}
+        /* FORM STYLING */
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-/* FOOTER */
-footer{
-    background:#0073e6;
-    color:white;
-    text-align:center;
-    padding:25px;
-    box-shadow:0 -5px 20px rgba(0,0,0,0.2);
-}
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .services, .doctors{
-        flex-direction:column;
-        align-items:center;
-    }
-}
-</style>
+        form input:focus, form textarea:focus {
+            border-color: #ff1493;
+            box-shadow: 0 0 5px rgba(255, 20, 147, 0.3);
+        }
+
+        form button {
+            width: 100%;
+            padding: 15px;
+            background: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        form button:hover {
+            background: #ff1493;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+        }
+
+        footer {
+            background: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        @media(max-width:768px) {
+            .services, .doctors { flex-direction: column; align-items: center; }
+            nav a { margin: 0 5px; font-size: 0.9rem; padding: 5px; }
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 
 <body>
 
+<script>
+function sendToWhatsApp() {
+    const phoneNumber = "8295493983"; 
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const date = document.getElementById('date').value;
+    const problem = document.getElementById('problem').value;
+
+    if(name === "" || email === "" || date === "" || problem === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    const message = "🏥 *New Appointment Request*%0a" + 
+                    "--------------------------%0a" +
+                    "*Name:* " + name + "%0a" +
+                    "*Email:* " + email + "%0a" +
+                    "*Date:* " + date + "%0a" +
+                    "*Problem:* " + problem;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank').focus();
+}
+</script>
+
 <header>
-<h1>HealthCare Medical Center</h1>
-<p>Your Health, Our Priority</p>
+    <h1>HealthCare Medical Center</h1>
+    <p>Your Health, Our Priority</p>
 </header>
 
 <nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#doctors">Doctors</a>
-<a href="#appointment">Appointment</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <p style="text-align:center;max-width:800px;margin:auto; line-height: 1.6;">
+            HealthCare Medical Center provides high-quality healthcare services with advanced technology 
+            and experienced doctors. Our goal is to ensure the best treatment and care for every patient.
+        </p>
+    </section>
 
-<section id="about">
-<h2 class="section-title">About Us</h2>
-<p style="text-align:center;max-width:800px;margin:auto;">
-HealthCare Medical Center provides high-quality healthcare services with advanced technology 
-and experienced doctors. Our goal is to ensure the best treatment and care for every patient.
-</p>
-</section>
+    <section id="services">
+        <h2 class="section-title">Our Medical Services</h2>
+        <div class="services">
+            <div class="service-box">
+                <div style="overflow:hidden;"><img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80" alt="Emergency"></div>
+                <div class="service-content">
+                    <h3>🩺 Emergency</h3>
+                    <p>24/7 care for critical injuries and sudden illnesses.</p>
+                </div>
+            </div>
 
-<section id="services">
-<h2 class="section-title">Our Services</h2>
+            <div class="service-box">
+                <div style="overflow:hidden;"><img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=600&q=80" alt="Lab"></div>
+                <div class="service-content">
+                    <h3>🔬 Advanced Lab</h3>
+                    <p>Accurate blood work and pathology with fast results.</p>
+                </div>
+            </div>
 
-<div class="services">
-<div class="service-box">🩺 Emergency Care</div>
-<div class="service-box">🔬 Laboratory</div>
-<div class="service-box">💊 Pharmacy</div>
-<div class="service-box">🩺 Health Checkups</div>
+            <div class="service-box">
+                <div style="overflow:hidden;"><img src="https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=600&q=80" alt="Pharmacy"></div>
+                <div class="service-content">
+                    <h3>💊 Pharmacy</h3>
+                    <p>In-house medications and healthcare products.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div style="overflow:hidden;"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80" alt="Checkups"></div>
+                <div class="service-content">
+                    <h3>📋 Checkups</h3>
+                    <p>Preventive packages for your family's health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors">
+        <h2 class="section-title">Our Expert Doctors</h2>
+        <div class="doctors">
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=500&q=80" alt="Cardiologist">
+                <div class="doctor-info">
+                    <h3>Dr. Rajesh Sharma</h3>
+                    <p class="specialty">Cardiologist</p>
+                    <p class="definition">Expert heart specialist treating chest pain and hypertension.</p>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80" alt="Dermatologist">
+                <div class="doctor-info">
+                    <h3>Dr. Neha Gupta</h3>
+                    <p class="specialty">Dermatologist</p>
+                    <p class="definition">Skin expert for acne, allergies, and advanced skin care.</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section id="appointment">
+        <h2 class="section-title">Book Appointment</h2>
+        <form id="whatsappForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="date" id="date" required>
+            <textarea id="problem" placeholder="Describe your problem..." rows="4" required></textarea>
+            <button type="button" onclick="sendToWhatsApp()">Submit via WhatsApp</button>
+        </form>
+    </section>
 </div>
 
-</section>
-
-<section id="doctors">
-<h2 class="section-title">Our Doctors</h2>
-
-<div class="doctors">
-<div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d">
-<h3>Dr. Rajesh Sharma</h3>
-<p>Cardiologist</p>
-</div>
-
-<div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2">
-<h3>Dr. Neha Gupta</h3>
-<p>Dermatologist</p>
-</div>
-<div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Dr. Amit Verma">
-<h3>Dr. Amit Verma</h3>
-<p>Orthopedic</p>
-</div>
-
-<div class="doctor-card">
-<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80" alt="Dr. Priya Kapoor">
-<h3>Dr. Priya Kapoor</h3>
-<p>Pediatrician</p>
-</div>
-
-</div>
-</div>
-
-</section>
-
-</div>
-
-<section id="appointment">
-<h2 class="section-title">Book Appointment</h2>
-
-<form method="post" action="submit.php">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="date" name="date" required>
-    <textarea name="problem" placeholder="Your Problem" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-</section>
 <footer id="contact">
-<p>Contact: healthcare@email.com | +91 9876543210</p>
-<p>© 2026 HealthCare Medical Center</p>
+    <p>📧 healthcare@email.com | 📞 +91 9876543210</p>
+    <p style="margin-top: 10px; opacity: 0.8;">© 2026 HealthCare Medical Center. All rights reserved.</p>
 </footer>
 
 </body>
